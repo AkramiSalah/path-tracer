@@ -1,6 +1,6 @@
 # Ray Tracing In One Weekend
----
-## this is a WOP.
+
+## NOTE : this is a WOP.
 
 ### goals:
 - learn to use MarkDown
