@@ -6,9 +6,10 @@
 
 template<typename T>
 struct vec3{
-    constexpr T ZERO = T();
-    constexpr T ONE = static_cast<T>(1);
-    constexpr size_t VECTOR_SIZE = 3;
+    static constexpr T ZERO = T();
+    static constexpr T ONE = static_cast<T>(1);
+    static constexpr size_t VECTOR_SIZE = 3;
+    
     T e[VECTOR_SIZE];
 
     vec3() : e{ ZERO, ZERO, ZERO }{}
