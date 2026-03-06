@@ -9,7 +9,7 @@ struct vec3{
     static constexpr T ZERO = T();
     static constexpr T ONE = static_cast<T>(1);
     static constexpr size_t VECTOR_SIZE = 3;
-    
+
     T e[VECTOR_SIZE];
 
     vec3() : e{ ZERO, ZERO, ZERO }{}
@@ -32,7 +32,6 @@ struct vec3{
     }
 
     const T& operator[](size_t index) const{
-        // no safety checks because we need speed.
         assert(index < VECTOR_SIZE);
         return e[index];
     }
@@ -44,6 +43,11 @@ struct vec3{
 
     vec3& operator+=(const vec3& other){
         for (int i = 0; i < VECTOR_SIZE; ++i) e[i] += other.e[i];
+        return *this;
+    }
+
+    vec3& operator-=(const vec3& other){
+        for (int i = 0; i < VECTOR_SIZE; ++i) e[i] -= other.e[i];
         return *this;
     }
 
@@ -96,8 +100,7 @@ struct vec3{
     }
 
     friend vec3 operator/(const vec3& v, T scalar) {
-        assert(scalar != ZERO);
-        return (ONE/scalar) * v;
+        return v /= scalar;
     }
 
     friend T dot(const vec3& lhs, const vec3& rhs){
