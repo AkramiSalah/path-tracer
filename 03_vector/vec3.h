@@ -69,6 +69,8 @@ struct vec3{
         return std::sqrt(length_squared());
     }
 
+    // aliasing vec3 as point3 for geometric clarity.
+    using point3 = vec3;
 
     // Vector Utility Functions
     friend std::ostream& operator<<(std::ostream& os, const vec3<T>& v){
