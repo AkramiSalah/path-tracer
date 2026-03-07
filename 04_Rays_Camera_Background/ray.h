@@ -1,5 +1,5 @@
 #pragma once
-#include "03_vector/vec3.h"
+#include "../03_vector/vec3.h"
 
 template<typename T>
 class ray{
