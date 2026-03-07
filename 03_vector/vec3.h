@@ -12,9 +12,9 @@ struct vec3{
 
     T e[VECTOR_SIZE];
 
-    vec3() : e{ ZERO, ZERO, ZERO }{}
-    vec3(T e0, T e1, T e2) : e{e0, e1, e2}{}
-    explicit vec3(T scalar) : e{scalar,scalar,scalar}{}
+    constexpr vec3() : e{ ZERO, ZERO, ZERO }{}
+    constexpr vec3(T e0, T e1, T e2) : e{e0, e1, e2}{}
+    constexpr explicit vec3(T scalar) : e{scalar,scalar,scalar}{}
 
     vec3(const vec3& other) = default;
     vec3& operator=(const vec3& other) = default;
