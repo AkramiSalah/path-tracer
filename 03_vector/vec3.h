@@ -98,7 +98,7 @@ struct vec3{
         return lhs;
     }
 
-    friend vec3 operator/(const vec3& v, T scalar) {
+    friend vec3 operator/(vec3 v, T scalar) {
         return v /= scalar;
     }
 
